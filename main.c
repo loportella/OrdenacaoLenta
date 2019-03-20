@@ -1,15 +1,19 @@
 #include <stdio.h>
 #include "ordenar.h"
 int main(int argc, char** argv) {
-	int op,n;float tb;
+	int op,n;float t;
+	unlink("a.txt");
 	printf("Quantos valores: ");scanf("%d",&n);
-		Entrada(n);
+		criaarq(n);
 		if(n>0){
-		tb=Bubblesort(n);	
+			
 	do{
-		printf("op ");scanf("%d",&op);
+		printf("MENU PRINCIPAL:\n");menu(0);
+		scanf("%d",&op);
 		switch(op){
-			case 1:BubblesortMenu(n);break;
+			case 1:menuBubble(n);break;
+			case 2:menuSelection(n);break;
+			case 3:menuInsertion(n);break;
 		}
 	}while(op!=0);
 }
